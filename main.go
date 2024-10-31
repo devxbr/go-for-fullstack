@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/devxbr/go-for-fulltack/microfrontends/card"
-	"github.com/devxbr/go-for-fulltack/microfrontends/footer"
-	"github.com/devxbr/go-for-fulltack/microfrontends/header"
+	"github.com/devxbr/go-to-fulltack/microfrontends/card"
+	"github.com/devxbr/go-to-fulltack/microfrontends/footer"
+	"github.com/devxbr/go-to-fulltack/microfrontends/header"
 )
 
 var startTime time.Time
