@@ -7,7 +7,7 @@ func Render() string {
                 <div class="row">
                     <div class="col l6 s12">
                         <p class="grey-text text-lighten-4">
-                        Devxbr - Go for Fullstack
+                        Devxbr - Go 4 Fullstack
                         </p>
                     </div>
                 </div>

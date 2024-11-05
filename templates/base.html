@@ -6,6 +6,7 @@
     <title>Microfrontend SSR com Golang e Material Design</title>
     <link href="/static/css/materialize.min.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         {{.Header}}
@@ -13,7 +14,12 @@
     <main class="container">
         <h5>Talk is cheap. Show me the code.</h5>
         <div class="row">
-            {{.Card}}
+            <div class="col s12 m6">
+                {{.TodoList}}
+            </div>
+            <div class="col s12 m6">
+                {{.Card}}
+            </div>
         </div>
     </main>
     <footer>
@@ -21,4 +27,39 @@
     </footer>
     <script src="/static/js/materialize.min.js"></script>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems);
+    });
+
+    function submitTodo(event) {
+        event.preventDefault();
+        const form = document.getElementById('todoForm');
+        const data = {
+            title: form.title.value,
+            description: form.description.value,
+            status: form.status.value
+        };
+
+        fetch('http://localhost:8080/add-to-do', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then()
+        .then((data) => {
+            alert('Tarefa adicionada com sucesso!');
+            form.reset();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Erro ao adicionar tarefa.');
+        });
+    }
+</script>
+
 </html>

@@ -19,7 +19,6 @@ func Render(startTime time.Time) string {
 		Desc:     fmt.Sprintf("Server uptime: %s", uptime),
 	}
 	return fmt.Sprintf(`
-        <div class="col s12 m6 l4">
             <div class="card">
                 <div class="card-image">
                     <img src="%s" alt="%s">
@@ -29,6 +28,5 @@ func Render(startTime time.Time) string {
                     <p>%s</p>
                 </div>
             </div>
-        </div>
     `, card.ImageURL, card.Title, card.Title, card.Desc)
 }
